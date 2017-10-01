@@ -1,17 +1,22 @@
 gatsby-plugin-ed-comments
 =========================
 
-Adds embedded comments to your website or blog, in an iframe. The commenting system is
-named EffectiveDiscussions, and it's open source, here:
+Source code here: https://github.com/debiki/gatsby-plugin-ed-comments  
+(In case you found this via npmjs.com.)
 
-https://github.com/debiki/ed-server
+This adds embedded comments to your website or blog, in an iframe. The commenting system is
+named EffectiveDiscussions, and it's open source, here: https://github.com/debiki/ed-server
 
 We provide hosting too, see: https://www.effectivediscussions.org/
 and look at the Blog Comments price plan.
 
-A Beta version of this plugin will likely be released maybe two weeks after PostgreSQL 10.0,
+Example blog post: https://www.kajmagnus.blog/new-embedded-comments  
+(scroll down to the bottom)
+
+**A Beta version** of this plugin will likely be released maybe two weeks after PostgreSQL 10.0,
 which might mean some day in November, this year, 2017. But you can use this now already,
-just be prepared to maybe update your code a few times extra and to report a bug.
+just be prepared to maybe update your embedding code or config values a few times extra,
+and suggesting improvements.
 
 ## Install
 

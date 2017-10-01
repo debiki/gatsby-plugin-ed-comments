@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-ed-comments",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "EffectiveDiscussions embedded comments.",
   "main": "index.js",
   "keywords": [
@@ -14,7 +14,8 @@
     "embedded",
     "iframe",
     "inline",
-    "disqus"],
+    "disqus"
+  ],
   "homepage": "https://www.ed.community",
   "scripts": {
     "build": "babel src --out-dir . --ignore __tests__",
