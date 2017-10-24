@@ -16,8 +16,7 @@ function addScriptTagOnce() {
 
   scriptElem.async = true;
   scriptElem.type = 'text/javascript';
-  scriptElem.src = 'https://edm-49f8.kxcdn.com/-/ed-comments.v0.min.js';
-              // = 'http://192.168.0.106/-/ed-comments.js';
+  scriptElem.src = window.edCommentsScriptUrl || 'https://edm-49f8.kxcdn.com/-/ed-comments.v0.min.js';
   window.edCommentsServerUrl = window.edCommentsServerUrl || 'https://comments.demo.ed.community';
 
   headOrBodyElem.appendChild(scriptElem);
@@ -37,7 +36,7 @@ class EffectiveDiscussionsCommentsIframe extends Component {
 
   render() {
     return (
-      <div className='ed-comments' data-discussion-id={this.props.discussionId || location.toString()}>
+      <div className='ed-comments' data-discussion-id={this.props.discussionId || ''} data-ed-page-id={this.props.edPageId || ''}>
         <noscript>Please enable Javascript to view comments.</noscript>
         <p style={{ marginTop: 25, opacity: 0.9, fontSize: '96%' }}>
           Comments powered by <a href='https://www.effectivediscussions.org'>Effective Discussions</a>.

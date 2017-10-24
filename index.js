@@ -30,8 +30,7 @@ function addScriptTagOnce() {
 
   scriptElem.async = true;
   scriptElem.type = 'text/javascript';
-  scriptElem.src = 'https://edm-49f8.kxcdn.com/-/ed-comments.v0.min.js';
-  // = 'http://192.168.0.106/-/ed-comments.js';
+  scriptElem.src = window.edCommentsScriptUrl || 'https://edm-49f8.kxcdn.com/-/ed-comments.v0.min.js';
   window.edCommentsServerUrl = window.edCommentsServerUrl || 'https://comments.demo.ed.community';
 
   headOrBodyElem.appendChild(scriptElem);
@@ -57,7 +56,7 @@ var EffectiveDiscussionsCommentsIframe = function (_Component) {
   EffectiveDiscussionsCommentsIframe.prototype.render = function render() {
     return _react2.default.createElement(
       'div',
-      { className: 'ed-comments', 'data-discussion-id': this.props.discussionId || location.toString() },
+      { className: 'ed-comments', 'data-discussion-id': this.props.discussionId || '', 'data-ed-page-id': this.props.edPageId || '' },
       _react2.default.createElement(
         'noscript',
         null,

@@ -12,6 +12,9 @@ exports.onRenderBody = function (_ref, pluginOptions) {
   return setPostBodyComponents([_react2.default.createElement('script', {
     key: `gatsby-plugin-ed-comments-server-url`,
     dangerouslySetInnerHTML: {
-      __html: `edCommentsServerUrl = '${pluginOptions.commentsServerUrl}';`
+      __html: `
+edCommentsServerUrl = '${pluginOptions.commentsServerUrl}';
+edCommentsScriptUrl = '${pluginOptions.commentsScriptUrl}';
+`
     } })]);
 }; /** Copyright (c) 2017 Kaj Magnus Lindberg. License: MIT. */

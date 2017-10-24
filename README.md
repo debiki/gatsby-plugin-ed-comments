@@ -43,10 +43,13 @@ Where https://www.example.com is the address to your EffectiveDiscussions server
 you have installed it yourself. Or the address to your EffectiveDiscussions site
 hosted by us, e.g. https://your-site-name.ed.community.
 
-If you just want to test this, to see how it works for you — then set 
-`commentsServerUrl` to null or `''`. Then a demo-test site will be used instead — and comments people
-post might get deleted at any time. (Doesn't work as of October 1 2017 — I haven't
-yet generated a HTTPS cert for the demo site.)
+## Is this for you?
+
+If you want to quickly test this, to see how it looks & works at your website,
+without spending time signing up or getting your own server
+— then, when configuring this plugin, set
+`commentsServerUrl` to `undefined`. Then a temporary test demo site will be used instead
+— and comments people post might get deleted at any time.
 
 ## License
 

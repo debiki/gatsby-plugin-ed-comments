@@ -8,7 +8,10 @@ exports.onRenderBody = ({ setPostBodyComponents }, pluginOptions) => {
     <script
       key={`gatsby-plugin-ed-comments-server-url`}
       dangerouslySetInnerHTML={{
-        __html: `edCommentsServerUrl = '${pluginOptions.commentsServerUrl}';`
+        __html: `
+edCommentsServerUrl = '${pluginOptions.commentsServerUrl}';
+edCommentsScriptUrl = '${pluginOptions.commentsScriptUrl}';
+`
       }} />,
   ])
 };
