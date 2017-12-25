@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 
 
 let scriptTagAdded = false;
+let currentUrlPath = location.pathname;
 
 
 function addScriptTagOnce() {
@@ -27,11 +28,26 @@ function addScriptTagOnce() {
 class EffectiveDiscussionsCommentsIframe extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
   }
 
   componentDidMount() {
-    addScriptTagOnce()
+    addScriptTagOnce();
+    const maybeNewPath = location.pathname;
+    if (currentUrlPath !== maybeNewPath) {
+      // The user have navigated to a new page, via history.push() and un/mounting components.
+      // We need to reload comments, for this new URL.
+      currentUrlPath = maybeNewPath;
+      // Maybe the user har clicked links to new pages super quickly, so the script hasn't loaded yet.
+      if (window.edReloadCommentsAndEditor) {
+        window.edReloadCommentsAndEditor();
+      }
+    }
+  }
+
+  componentWillUnmount() {
+    if (window.edRemoveCommentsAndEditor) {
+      window.edRemoveCommentsAndEditor();
+    }
   }
 
   render() {

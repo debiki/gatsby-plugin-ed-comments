@@ -22,6 +22,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var scriptTagAdded = false; /** Copyright (c) 2017 Kaj Magnus Lindberg. License: MIT. */
 
+var currentUrlPath = location.pathname;
+
 function addScriptTagOnce() {
   if (scriptTagAdded) return;
 
@@ -42,15 +44,27 @@ var EffectiveDiscussionsCommentsIframe = function (_Component) {
 
   function EffectiveDiscussionsCommentsIframe(props) {
     (0, _classCallCheck3.default)(this, EffectiveDiscussionsCommentsIframe);
-
-    var _this = (0, _possibleConstructorReturn3.default)(this, _Component.call(this, props));
-
-    _this.state = {};
-    return _this;
+    return (0, _possibleConstructorReturn3.default)(this, _Component.call(this, props));
   }
 
   EffectiveDiscussionsCommentsIframe.prototype.componentDidMount = function componentDidMount() {
     addScriptTagOnce();
+    var maybeNewPath = location.pathname;
+    if (currentUrlPath !== maybeNewPath) {
+      // The user have navigated to a new page, via history.push() and un/mounting components.
+      // We need to reload comments, for this new URL.
+      currentUrlPath = maybeNewPath;
+      // Maybe the user har clicked links to new pages super quickly, so the script hasn't loaded yet.
+      if (window.edReloadCommentsAndEditor) {
+        window.edReloadCommentsAndEditor();
+      }
+    }
+  };
+
+  EffectiveDiscussionsCommentsIframe.prototype.componentWillUnmount = function componentWillUnmount() {
+    if (window.edRemoveCommentsAndEditor) {
+      window.edRemoveCommentsAndEditor();
+    }
   };
 
   EffectiveDiscussionsCommentsIframe.prototype.render = function render() {
