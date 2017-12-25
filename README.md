@@ -119,6 +119,7 @@ Here's our support forum: https://www.effectivediscussions.org/forum/latest/supp
 
 ## Changelog
 
+- `v0.4.4` Fix compilation error: don't use `window.location`.
 - `v0.4.3` Bug fix: Reload comments if navigating to new blog URL.
 - `v0.4.2` Initial release.
 

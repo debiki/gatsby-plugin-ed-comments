@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-ed-comments",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "EffectiveDiscussions embedded comments.",
   "main": "index.js",
   "keywords": [
