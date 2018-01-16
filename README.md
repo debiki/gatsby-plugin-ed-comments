@@ -4,9 +4,10 @@ gatsby-plugin-ed-comments
 Source code: https://github.com/debiki/gatsby-plugin-ed-comments  
 
 This adds embedded comments to your website or blog, in an iframe. The commenting system is
-named EffectiveDiscussions, and it's open source, here: https://github.com/debiki/ed-server
+named Talkyard (previously, it was named EffectiveDiscussions), and it's open source,
+here: https://github.com/debiki/ed-server
 
-We provide hosting too, see: https://www.effectivediscussions.org/
+We provide hosting too, see: https://www.talkyard.io/
 and look at the Blog Comments price plan.
 
 Example blog post: https://www.kajmagnus.blog/new-embedded-comments  
@@ -14,6 +15,8 @@ Example blog post: https://www.kajmagnus.blog/new-embedded-comments
 
 **This is Beta software**. Maybe you'll need to update your embedding code or config values
 every now and when, before everything stabilizes.
+
+This plugin will soon be renamed to *-talkyard-* something.
 
 
 ## Installation
@@ -41,17 +44,17 @@ plugins: [
 ]
 ```
 
-Where https://www.example.com is the address to your EffectiveDiscussions server, if
-you have installed it yourself. Or the address to your EffectiveDiscussions site
-hosted by us, e.g. https://comments-for-your-blog.ed.community.
+Where https://www.example.com is the address to your Talkyard server, if
+you have installed it yourself. Or the address to your Talkyard site
+hosted by us, e.g. https://comments-for-your-blog.talkyard.io.
 
 Then, in your blog post template:
 
 ```javascript
-import EffectiveDiscussionsCommentsIframe from 'gatsby-plugin-ed-comments'
+import TalkyardCommentsIframe from 'gatsby-plugin-ed-comments';
 
 // And where the comments shall appear:
-<EffectiveDiscussionsCommentsIframe />
+<TalkyardCommentsIframe />
 ```
 
 ## Changing the URL of a blog post?
@@ -97,11 +100,11 @@ export const pageQuery = graphql`
 `;
 ```
 
-And also change from: `<EffectiveDiscussionsCommentsIframe />`
+And also change from: `<TalkyardCommentsIframe />`
 to:
 
 ```
-<EffectiveDiscussionsCommentsIframe discussionId={post.frontmatter.discussionId} />
+<TalkyardCommentsIframe discussionId={post.frontmatter.discussionId} />
 ```
 
 ## Is this for you?
@@ -114,17 +117,18 @@ without spending time signing up or getting your own server
 
 ## Getting help
 
-Here's our support forum: https://www.effectivediscussions.org/forum/latest/support
+Here's our support forum: https://www.talkyard.io/forum/latest/support
 
 
 ## Changelog
 
+- `v0.4.5` Rename to Talkyard, should be backwards compatible.
 - `v0.4.4` Fix compilation error: don't use `window.location`.
 - `v0.4.3` Bug fix: Reload comments if navigating to new blog URL.
 - `v0.4.2` Initial release.
 
 ## License
 
-Copyright (c) 2017 Kaj Magnus Linberg.
+Copyright (c) 2017-2018 Kaj Magnus Linberg.
 The MIT license.
 

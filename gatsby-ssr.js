@@ -10,11 +10,11 @@ exports.onRenderBody = function (_ref, pluginOptions) {
   var setPostBodyComponents = _ref.setPostBodyComponents;
 
   return setPostBodyComponents([_react2.default.createElement('script', {
-    key: `gatsby-plugin-ed-comments-server-url`,
+    key: `gatsby-plugin-talkyard-server-url`,
     dangerouslySetInnerHTML: {
       __html: `
-edCommentsServerUrl = '${pluginOptions.commentsServerUrl}';
-edCommentsScriptUrl = '${pluginOptions.commentsScriptUrl}';
+talkyardCommentsServerUrl = '${pluginOptions.commentsServerUrl}';
+talkyardCommentsScriptUrl = '${pluginOptions.commentsScriptUrl}';
 `
     } })]);
-}; /** Copyright (c) 2017 Kaj Magnus Lindberg. License: MIT. */
+}; /** Copyright (c) 2017-2018 Kaj Magnus Lindberg. License: MIT. */

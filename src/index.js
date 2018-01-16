@@ -1,4 +1,4 @@
-/** Copyright (c) 2017 Kaj Magnus Lindberg. License: MIT. */
+/** Copyright (c) 2017-2018 Kaj Magnus Lindberg. License: MIT. */
 
 import React, { Component } from 'react';
 
@@ -16,15 +16,15 @@ function addScriptTagOnce() {
 
   scriptElem.async = true;
   scriptElem.type = 'text/javascript';
-  scriptElem.src = window.edCommentsScriptUrl || 'https://edm-49f8.kxcdn.com/-/ed-comments.v0.min.js';
-  window.edCommentsServerUrl = window.edCommentsServerUrl || 'https://comments.demo.ed.community';
+  scriptElem.src = window.talkyardCommentsScriptUrl || 'https://tyc-49f8.kxcdn.com/-/talkyard-comments.min.js';
+  window.talkyardCommentsServerUrl = window.talkyardCommentsServerUrl || 'https://comments.demo.talkyard.io';
 
   headOrBodyElem.appendChild(scriptElem);
   scriptTagAdded = true;
 }
 
 
-class EffectiveDiscussionsCommentsIframe extends Component {
+class TalkyardCommentsIframe extends Component {
   constructor(props) {
     super(props);
   }
@@ -40,6 +40,9 @@ class EffectiveDiscussionsCommentsIframe extends Component {
       if (window.edReloadCommentsAndEditor) {
         window.edReloadCommentsAndEditor();
       }
+      else if (window.talkyardReloadCommentsAndEditor) {
+        window.talkyardReloadCommentsAndEditor();
+      }
     }
   }
 
@@ -47,18 +50,21 @@ class EffectiveDiscussionsCommentsIframe extends Component {
     if (window.edRemoveCommentsAndEditor) {
       window.edRemoveCommentsAndEditor();
     }
+    else if (window.talkyardRemoveCommentsAndEditor) {
+      window.talkyardRemoveCommentsAndEditor();
+    }
   }
 
   render() {
     return (
-      <div className='ed-comments' data-discussion-id={this.props.discussionId || ''} data-ed-page-id={this.props.edPageId || ''}>
+      <div className='talkyard-comments' data-discussion-id={this.props.discussionId || ''} data-talkyard-page-id={this.props.talkyardPageId || this.props.edPageId || ''}>
         <noscript>Please enable Javascript to view comments.</noscript>
         <p style={{ marginTop: 25, opacity: 0.9, fontSize: '96%' }}>
-          Comments powered by <a href='https://www.effectivediscussions.org'>Effective Discussions</a>.
+          Comments powered by <a href='https://www.talkyard.io'>Talkyard</a>.
         </p>
       </div>);
   }
 
 }
 
-export default EffectiveDiscussionsCommentsIframe;
+export default TalkyardCommentsIframe;

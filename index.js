@@ -20,7 +20,7 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var scriptTagAdded = false; /** Copyright (c) 2017 Kaj Magnus Lindberg. License: MIT. */
+var scriptTagAdded = false; /** Copyright (c) 2017-2018 Kaj Magnus Lindberg. License: MIT. */
 
 function addScriptTagOnce() {
   if (scriptTagAdded) return;
@@ -30,22 +30,22 @@ function addScriptTagOnce() {
 
   scriptElem.async = true;
   scriptElem.type = 'text/javascript';
-  scriptElem.src = window.edCommentsScriptUrl || 'https://edm-49f8.kxcdn.com/-/ed-comments.v0.min.js';
-  window.edCommentsServerUrl = window.edCommentsServerUrl || 'https://comments.demo.ed.community';
+  scriptElem.src = window.talkyardCommentsScriptUrl || 'https://tyc-49f8.kxcdn.com/-/talkyard-comments.min.js';
+  window.talkyardCommentsServerUrl = window.talkyardCommentsServerUrl || 'https://comments.demo.talkyard.io';
 
   headOrBodyElem.appendChild(scriptElem);
   scriptTagAdded = true;
 }
 
-var EffectiveDiscussionsCommentsIframe = function (_Component) {
-  (0, _inherits3.default)(EffectiveDiscussionsCommentsIframe, _Component);
+var TalkyardCommentsIframe = function (_Component) {
+  (0, _inherits3.default)(TalkyardCommentsIframe, _Component);
 
-  function EffectiveDiscussionsCommentsIframe(props) {
-    (0, _classCallCheck3.default)(this, EffectiveDiscussionsCommentsIframe);
+  function TalkyardCommentsIframe(props) {
+    (0, _classCallCheck3.default)(this, TalkyardCommentsIframe);
     return (0, _possibleConstructorReturn3.default)(this, _Component.call(this, props));
   }
 
-  EffectiveDiscussionsCommentsIframe.prototype.componentDidMount = function componentDidMount() {
+  TalkyardCommentsIframe.prototype.componentDidMount = function componentDidMount() {
     var isReMounting = scriptTagAdded;
     addScriptTagOnce();
     if (isReMounting) {
@@ -55,20 +55,24 @@ var EffectiveDiscussionsCommentsIframe = function (_Component) {
       // loaded yet, so check if the fn exists.
       if (window.edReloadCommentsAndEditor) {
         window.edReloadCommentsAndEditor();
+      } else if (window.talkyardReloadCommentsAndEditor) {
+        window.talkyardReloadCommentsAndEditor();
       }
     }
   };
 
-  EffectiveDiscussionsCommentsIframe.prototype.componentWillUnmount = function componentWillUnmount() {
+  TalkyardCommentsIframe.prototype.componentWillUnmount = function componentWillUnmount() {
     if (window.edRemoveCommentsAndEditor) {
       window.edRemoveCommentsAndEditor();
+    } else if (window.talkyardRemoveCommentsAndEditor) {
+      window.talkyardRemoveCommentsAndEditor();
     }
   };
 
-  EffectiveDiscussionsCommentsIframe.prototype.render = function render() {
+  TalkyardCommentsIframe.prototype.render = function render() {
     return _react2.default.createElement(
       'div',
-      { className: 'ed-comments', 'data-discussion-id': this.props.discussionId || '', 'data-ed-page-id': this.props.edPageId || '' },
+      { className: 'talkyard-comments', 'data-discussion-id': this.props.discussionId || '', 'data-talkyard-page-id': this.props.talkyardPageId || this.props.edPageId || '' },
       _react2.default.createElement(
         'noscript',
         null,
@@ -80,15 +84,15 @@ var EffectiveDiscussionsCommentsIframe = function (_Component) {
         'Comments powered by ',
         _react2.default.createElement(
           'a',
-          { href: 'https://www.effectivediscussions.org' },
-          'Effective Discussions'
+          { href: 'https://www.talkyard.io' },
+          'Talkyard'
         ),
         '.'
       )
     );
   };
 
-  return EffectiveDiscussionsCommentsIframe;
+  return TalkyardCommentsIframe;
 }(_react.Component);
 
-exports.default = EffectiveDiscussionsCommentsIframe;
+exports.default = TalkyardCommentsIframe;

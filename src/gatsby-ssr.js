@@ -1,4 +1,4 @@
-/** Copyright (c) 2017 Kaj Magnus Lindberg. License: MIT. */
+/** Copyright (c) 2017-2018 Kaj Magnus Lindberg. License: MIT. */
 
 import React from 'react';
 
@@ -6,11 +6,11 @@ import React from 'react';
 exports.onRenderBody = ({ setPostBodyComponents }, pluginOptions) => {
   return setPostBodyComponents([
     <script
-      key={`gatsby-plugin-ed-comments-server-url`}
+      key={`gatsby-plugin-talkyard-server-url`}
       dangerouslySetInnerHTML={{
         __html: `
-edCommentsServerUrl = '${pluginOptions.commentsServerUrl}';
-edCommentsScriptUrl = '${pluginOptions.commentsScriptUrl}';
+talkyardCommentsServerUrl = '${pluginOptions.commentsServerUrl}';
+talkyardCommentsScriptUrl = '${pluginOptions.commentsScriptUrl}';
 `
       }} />,
   ])
