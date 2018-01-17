@@ -4,8 +4,7 @@ gatsby-plugin-ed-comments
 Source code: https://github.com/debiki/gatsby-plugin-ed-comments  
 
 This adds embedded comments to your website or blog, in an iframe. The commenting system is
-named Talkyard (previously, it was named EffectiveDiscussions), and it's open source,
-here: https://github.com/debiki/ed-server
+named Talkyard, and it's open source: https://github.com/debiki/ed-server
 
 We provide hosting too, see: https://www.talkyard.io/
 and look at the Blog Comments price plan.
@@ -16,14 +15,12 @@ Example blog post: https://www.kajmagnus.blog/new-embedded-comments
 **This is Beta software**. Maybe you'll need to update your embedding code or config values
 every now and when, before everything stabilizes.
 
-This plugin will soon be renamed to *-talkyard-* something.
-
 
 ## Installation
 
 ```
-npm install --save gatsby-plugin-ed-comments  # with npm
-yarn add gatsby-plugin-ed-comments            # with Yarn
+npm install --save @debiki/gatsby-plugin-talkyard  # with npm
+yarn add @debiki/gatsby-plugin-talkyard            # with Yarn
 ```
 
 And tell us that you're using this — so we get the chance to notify you about security updates
@@ -36,7 +33,7 @@ and other stuff. Send us an email: support at ed.community.
 // In your gatsby-config.js
 plugins: [
     {
-      resolve: `gatsby-plugin-ed-comments`,
+      resolve: `@debiki/gatsby-plugin-talkyard`,
       options: {
         commentsServerUrl: 'https://www.example.com'
       }
@@ -51,7 +48,7 @@ hosted by us, e.g. https://comments-for-your-blog.talkyard.io.
 Then, in your blog post template:
 
 ```javascript
-import TalkyardCommentsIframe from 'gatsby-plugin-ed-comments';
+import TalkyardCommentsIframe from '@debiki/gatsby-plugin-talkyard';
 
 // And where the comments shall appear:
 <TalkyardCommentsIframe />

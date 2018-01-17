@@ -37,20 +37,14 @@ class TalkyardCommentsIframe extends Component {
       // We need to reload comments, for this new URL.
       // But maybe the user har clicked links to new pages super quickly, so the script hasn't
       // loaded yet, so check if the fn exists.
-      if (window.edReloadCommentsAndEditor) {
-        window.edReloadCommentsAndEditor();
-      }
-      else if (window.talkyardReloadCommentsAndEditor) {
+      if (window.talkyardReloadCommentsAndEditor) {
         window.talkyardReloadCommentsAndEditor();
       }
     }
   }
 
   componentWillUnmount() {
-    if (window.edRemoveCommentsAndEditor) {
-      window.edRemoveCommentsAndEditor();
-    }
-    else if (window.talkyardRemoveCommentsAndEditor) {
+    if (window.talkyardRemoveCommentsAndEditor) {
       window.talkyardRemoveCommentsAndEditor();
     }
   }
