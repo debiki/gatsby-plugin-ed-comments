@@ -9,8 +9,8 @@ exports.onRenderBody = ({ setPostBodyComponents }, pluginOptions) => {
       key={`gatsby-plugin-talkyard-server-url`}
       dangerouslySetInnerHTML={{
         __html: `
-talkyardCommentsServerUrl = '${pluginOptions.commentsServerUrl}';
-talkyardCommentsScriptUrl = '${pluginOptions.commentsScriptUrl}';
+talkyardCommentsServerUrl = '${pluginOptions.commentsServerUrl || '' }';
+talkyardCommentsScriptUrl = '${pluginOptions.commentsScriptUrl || '' }';
 `
       }} />,
   ])

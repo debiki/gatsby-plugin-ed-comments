@@ -1,6 +1,6 @@
 {
   "name": "@debiki/gatsby-plugin-talkyard",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Talkyard (previously named EffectiveDiscussions) embedded comments for Gatsby static sites.",
   "main": "index.js",
   "keywords": [

@@ -119,6 +119,8 @@ Here's our support forum: https://www.talkyard.io/forum/latest/support
 
 ## Changelog
 
+- `v0.5.1`, 2018-01-18: Fix 'undefined' bug.
+- `v0.5.0` Rename npm package to @debiki/gatsby-plugin-talkyard.
 - `v0.4.5` Rename to Talkyard, should be backwards compatible.
 - `v0.4.4` Fix compilation error: don't use `window.location`.
 - `v0.4.3` Bug fix: Reload comments if navigating to new blog URL.
