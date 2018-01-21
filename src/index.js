@@ -16,7 +16,7 @@ function addScriptTagOnce() {
 
   scriptElem.async = true;
   scriptElem.type = 'text/javascript';
-  scriptElem.src = window.talkyardCommentsScriptUrl || 'https://tyc-49f8.kxcdn.com/-/talkyard-comments.min.js';
+  scriptElem.src = window.talkyardCommentsScriptUrl || 'https://cdn.talkyard.io/-/talkyard-comments.min.js';
   window.talkyardCommentsServerUrl = window.talkyardCommentsServerUrl || 'https://comments.demo.talkyard.io';
 
   headOrBodyElem.appendChild(scriptElem);
