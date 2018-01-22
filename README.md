@@ -119,6 +119,7 @@ Here's our support forum: https://www.talkyard.io/forum/latest/support
 
 ## Changelog
 
+- `v0.5.3`, 2018-01-21: Use CDN CNAME: `cdn.talkyard.net`, use `comments-demo` not `.demo`.
 - `v0.5.2`, 2018-01-21: Use CDN CNAME: `cdn.talkyard.io`.
 - `v0.5.1`, 2018-01-18: Fix 'undefined' bug.
 - `v0.5.0` Rename npm package to @debiki/gatsby-plugin-talkyard.
