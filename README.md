@@ -122,6 +122,7 @@ Here's our support forum: https://www.talkyard.io/forum/latest/support
 
 ## Changelog
 
+- `v0.4.7` Use CDN CNAME: `cdn.talkyard.net`, and `comments-demo` not `comments.demo`.
 - `v0.4.6` Use CDN CNAME: `cdn.talkyard.io`.
 - `v0.4.5` Rename to Talkyard, should be backwards compatible.
 - `v0.4.4` Fix compilation error: don't use `window.location`.
