@@ -1,13 +1,15 @@
-gatsby-plugin-ed-comments
+gatsby-plugin-talkyard
 =========================
 
 Source code: https://github.com/debiki/gatsby-plugin-ed-comments  
 
-This adds embedded comments to your website or blog, in an iframe. The commenting system is
-named Talkyard, and it's open source: https://github.com/debiki/ed-server
+Talkyard adds embedded comments to your website or blog, in an iframe. It's
+open source: https://github.com/debiki/ed-server
 
-We provide hosting too, see: https://www.talkyard.io/
-and look at the Blog Comments price plan.
+We provide hosting too; go to https://www.talkyard.io/
+and click Create Community and then choose Blog Comments.
+Talkyard is also forum software with chat and question-answers features —
+so you can create a community for your website, that integrates with the embedded comments.
 
 Example blog post: https://www.kajmagnus.blog/new-embedded-comments  
 (scroll down to the bottom)
@@ -35,7 +37,7 @@ plugins: [
     {
       resolve: `@debiki/gatsby-plugin-talkyard`,
       options: {
-        commentsServerUrl: 'https://www.example.com'
+        talkyardServerUrl: 'https://www.example.com'
       }
     },
 ]
@@ -43,7 +45,7 @@ plugins: [
 
 Where https://www.example.com is the address to your Talkyard server, if
 you have installed it yourself. Or the address to your Talkyard site
-hosted by us, e.g. https://comments-for-your-blog.talkyard.io.
+hosted by us, e.g. https://comments-for-your-blog.talkyard.net.
 
 Then, in your blog post template:
 
@@ -109,8 +111,9 @@ to:
 If you want to quickly test this, to see how it looks & works at your website,
 without spending time signing up or getting your own server
 — then, when configuring this plugin, set
-`commentsServerUrl` to `undefined`. Then a temporary test demo site will be used instead
-— and comments people post might get deleted at any time.
+`talkyardServerUrl` to `https://comments-demo.talkyard.io`
+— that's a demo site you can use, just to try out Talkyard.
+Comments people post might get deleted at any time (because it's a test demo site).
 
 ## Getting help
 
@@ -119,6 +122,7 @@ Here's our support forum: https://www.talkyard.io/forum/latest/support
 
 ## Changelog
 
+- `v0.5.4`, 2018-01-23: Rename to `talkyardServerUrl`.
 - `v0.5.3`, 2018-01-21: Use CDN CNAME: `cdn.talkyard.net`, use `comments-demo` not `.demo`.
 - `v0.5.2`, 2018-01-21: Use CDN CNAME: `cdn.talkyard.io`.
 - `v0.5.1`, 2018-01-18: Fix 'undefined' bug.
