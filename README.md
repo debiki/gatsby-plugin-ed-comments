@@ -29,7 +29,9 @@ And tell us that you're using this — so we get the chance to notify you about 
 and other stuff. Send us an email: support at ed.community.
 
 
-## How to use
+## Getting started
+
+To try out Talkyard, do this:
 
 ```javascript
 // In your gatsby-config.js
@@ -37,15 +39,15 @@ plugins: [
     {
       resolve: `@debiki/gatsby-plugin-talkyard`,
       options: {
-        talkyardServerUrl: 'https://www.example.com'
+        talkyardServerUrl: 'https://comments-demo.talkyard.io'
       }
     },
 ]
 ```
 
-Where https://www.example.com is the address to your Talkyard server, if
-you have installed it yourself. Or the address to your Talkyard site
-hosted by us, e.g. https://comments-for-your-blog.talkyard.net.
+The URL above is to a **demo test site**, so you can try out Talkyard, without
+signing up for hosting or installing Talkyard on your own server.
+Comments people post might get deleted at any time (because it's a test demo site).
 
 Then, in your blog post template:
 
@@ -55,6 +57,22 @@ import TalkyardCommentsIframe from '@debiki/gatsby-plugin-talkyard';
 // And where the comments shall appear:
 <TalkyardCommentsIframe />
 ```
+
+Now, **restart Gatsby** and look at the comments that should appear below your blog posts.
+
+
+## Real installation
+
+Follow the Getting Started instructions just above.
+Then, go to <https://www.talkyard.io>, click *Create Community* and then *Blog Commets*.
+Follow the instructions, and then copy-paste the URL to your site into the `talkyardServerUrl`
+config value above, e.g.:
+
+```
+    talkyardServerUrl: 'https://comments-for-your-blog.talkyard.net'
+```
+
+And **restart Gatsby**.
 
 ## Changing the URL of a blog post?
 
@@ -77,7 +95,6 @@ And also tell React to include the discussion id in the props. At the GraphQL qu
 at the bottom of the blog post template page:
 
 ```
-
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
@@ -106,14 +123,6 @@ to:
 <TalkyardCommentsIframe discussionId={post.frontmatter.discussionId} />
 ```
 
-## Is this for you?
-
-If you want to quickly test this, to see how it looks & works at your website,
-without spending time signing up or getting your own server
-— then, when configuring this plugin, set
-`talkyardServerUrl` to `https://comments-demo.talkyard.io`
-— that's a demo site you can use, just to try out Talkyard.
-Comments people post might get deleted at any time (because it's a test demo site).
 
 ## Getting help
 
@@ -122,6 +131,7 @@ Here's our support forum: https://www.talkyard.io/forum/latest/support
 
 ## Changelog
 
+- `v0.5.5`, 2018-01-23: Edit readme.
 - `v0.5.4`, 2018-01-23: Rename to `talkyardServerUrl`.
 - `v0.5.3`, 2018-01-21: Use CDN CNAME: `cdn.talkyard.net`, use `comments-demo` not `.demo`.
 - `v0.5.2`, 2018-01-21: Use CDN CNAME: `cdn.talkyard.io`.
