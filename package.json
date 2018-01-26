@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-ed-comments",
-  "version": "0.4.7",
+  "version": "0.4.8",
   "description": "Talkyard (previously named EffectiveDiscussions) embedded comments for Gatsby static sites.",
   "main": "index.js",
   "keywords": [

@@ -1,6 +1,12 @@
 gatsby-plugin-ed-comments
 =========================
 
+**RENAMED**. Here's the new location, go there: https://www.npmjs.com/package/@debiki/gatsby-plugin-talkyard
+
+The new name is Talkyard (instead of EffectiveDiscussions and ed-comments).
+
+---
+
 Source code: https://github.com/debiki/gatsby-plugin-ed-comments  
 
 This adds embedded comments to your website or blog, in an iframe. The commenting system is
@@ -20,6 +26,10 @@ This plugin will soon be renamed to *-talkyard-* something.
 
 
 ## Installation
+
+NO DON'T INSTALL THIS. The plugin has been RENAMED. Go here instead:
+
+- https://www.npmjs.com/package/@debiki/gatsby-plugin-talkyard
 
 ```
 npm install --save gatsby-plugin-ed-comments  # with npm
