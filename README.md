@@ -4,7 +4,7 @@ gatsby-plugin-talkyard
 Source code: https://github.com/debiki/gatsby-plugin-ed-comments  
 
 Talkyard adds embedded comments to your website or blog, in an iframe. It's
-open source: https://github.com/debiki/ed-server
+open source: https://github.com/debiki/talkyard
 
 We provide hosting too; go to https://www.talkyard.io/
 and click Create Community and then choose Blog Comments.
@@ -26,7 +26,7 @@ yarn add @debiki/gatsby-plugin-talkyard            # with Yarn
 ```
 
 And tell us that you're using this — so we get the chance to notify you about security updates
-and other stuff. Send us an email: support at ed.community.
+and other stuff. Send us an email: hello at talkyard.io.
 
 
 ## Getting started
@@ -131,6 +131,7 @@ Here's our support forum: https://www.talkyard.io/forum/latest/support
 
 ## Changelog
 
+- `v0.5.7`, 2018-05-17: Update email addr.
 - `v0.5.6`, 2018-05-17: Add `talkyardDebug` config value, set to `false` to disable debug log messages.
 - `v0.5.5`, 2018-01-23: Edit readme.
 - `v0.5.4`, 2018-01-23: Rename to `talkyardServerUrl`.
