@@ -131,6 +131,7 @@ Here's our support forum: https://www.talkyard.io/forum/latest/support
 
 ## Changelog
 
+- `v0.5.6`, 2018-05-17: Add `talkyardDebug` config value, set to `false` to disable debug log messages.
 - `v0.5.5`, 2018-01-23: Edit readme.
 - `v0.5.4`, 2018-01-23: Rename to `talkyardServerUrl`.
 - `v0.5.3`, 2018-01-21: Use CDN CNAME: `cdn.talkyard.net`, use `comments-demo` not `.demo`.
@@ -141,6 +142,24 @@ Here's our support forum: https://www.talkyard.io/forum/latest/support
 - `v0.4.4` Fix compilation error: don't use `window.location`.
 - `v0.4.3` Bug fix: Reload comments if navigating to new blog URL.
 - `v0.4.2` Initial release.
+
+## Building and publishing
+
+To "publish" this Gatsby module locally, and use in another project on your localhost:
+
+- Build this lib: `yarn prepublish`.
+- Then type `yarn help link` and read the docs.
+- Then type `yarn link` in this directory.
+- And type `yarn link @debiki/gatsby-plugin-talkyard` in the project where you
+    want to use this local build.
+
+To publish to the NPM registry:
+
+- Edit the version in `package.js` or maybe type `npm version patch` (or `minor` or `major`).
+- Type `npm whoami` — are you the correct user? If not, create an account over at https://www.npmjs.com, then type `npm login`.
+- Type `npm publish`
+- Go to `https://npmjs.com/package/<package>` and see what happened.
+- Type `npm logout`
 
 ## License
 

@@ -1,7 +1,7 @@
 {
   "name": "@debiki/gatsby-plugin-talkyard",
-  "version": "0.5.5",
-  "description": "Talkyard (previously named EffectiveDiscussions) embedded comments for Gatsby static sites.",
+  "version": "0.5.6",
+  "description": "Talkyard embedded comments for Gatsby static sites.",
   "main": "index.js",
   "keywords": [
     "gatsby",
@@ -17,13 +17,13 @@
     "inline",
     "disqus"
   ],
-  "homepage": "https://www.talkyard.io",
+  "homepage": "https://www.talkyard.io/blog-comments",
   "scripts": {
     "build": "babel src --out-dir . --ignore __tests__",
     "watch": "babel -w src --out-dir . --ignore __tests__",
     "prepublish": "cross-env NODE_ENV=production npm run build"
   },
-  "author": "Kaj Magnus Lindberg <kajmagnus3@gmail.com>",
+  "author": "Kaj Magnus Lindberg <kajmagnus@talkyard.io>",
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.26.0",
