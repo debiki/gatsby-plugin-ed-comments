@@ -4,18 +4,14 @@ gatsby-plugin-talkyard
 Source code: https://github.com/debiki/gatsby-plugin-ed-comments  
 
 Talkyard adds embedded comments to your website or blog, in an iframe. It's
-open source: https://github.com/debiki/talkyard
+open source: https://github.com/debiki/talkyard.
+Serverless hosting: https://www.talkyard.io/plans, choose Blog Comments.
 
-We provide hosting too; go to https://www.talkyard.io/
-and click Create Community and then choose Blog Comments.
-Talkyard is also forum software with chat and question-answers features —
-so you can create a community for your website, that integrates with the embedded comments.
+Talkyard is also forum software with chat and question-answers features:
+you can create a community for your website, integrated with the blog comments.
 
 Example blog post: https://www.kajmagnus.blog/new-embedded-comments  
 (scroll down to the bottom)
-
-**This is Beta software**. Maybe you'll need to update your embedding code or config values
-every now and when, before everything stabilizes.
 
 
 ## Installation
@@ -26,12 +22,12 @@ yarn add @debiki/gatsby-plugin-talkyard            # with Yarn
 ```
 
 And tell us that you're using this — so we get the chance to notify you about security updates
-and other stuff. Send us an email: hello at talkyard.io.
+and other things. Send us an email: hello at talkyard.io.
 
 
 ## Getting started
 
-To try out Talkyard, do this:
+To try out Talkyard, do this: (this is for Gatsby 1, might not work with Gatsby v2)
 
 ```javascript
 // In your gatsby-config.js
@@ -46,7 +42,7 @@ plugins: [
 ```
 
 The URL above is to a **demo test site**, so you can try out Talkyard, without
-signing up for hosting or installing Talkyard on your own server.
+signing up for hosting, or getting your own server.
 Comments people post might get deleted at any time (because it's a test demo site).
 
 Then, in your blog post template:
@@ -64,7 +60,7 @@ Now, **restart Gatsby** and look at the comments that should appear below your b
 ## Real installation
 
 Follow the Getting Started instructions just above.
-Then, go to <https://www.talkyard.io>, click *Create Community* and then *Blog Commets*.
+Then, go to <https://www.talkyard.io/plans> and choose *Blog Comments*.
 Follow the instructions, and then copy-paste the URL to your site into the `talkyardServerUrl`
 config value above, e.g.:
 
@@ -131,6 +127,7 @@ Here's our support forum: https://www.talkyard.io/forum/latest/support
 
 ## Changelog
 
+- `v0.5.8`, 2018-12-27: Change CDN address to a separate eTLD+1 domain.
 - `v0.5.7`, 2018-05-17: Update email addr.
 - `v0.5.6`, 2018-05-17: Add `talkyardDebug` config value, set to `false` to disable debug log messages.
 - `v0.5.5`, 2018-01-23: Edit readme.

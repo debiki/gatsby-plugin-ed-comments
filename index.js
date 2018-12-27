@@ -30,7 +30,7 @@ function addScriptTagOnce() {
 
   scriptElem.async = true;
   scriptElem.type = 'text/javascript';
-  scriptElem.src = window.talkyardScriptUrl || 'https://cdn.talkyard.net/-/talkyard-comments.min.js';
+  scriptElem.src = window.talkyardScriptUrl || 'https://c1.ty-cdn.net/-/talkyard-comments.min.js';
   window.talkyardServerUrl = window.talkyardServerUrl || 'https://comments-demo.talkyard.io';
 
   headOrBodyElem.appendChild(scriptElem);
